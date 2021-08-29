@@ -1,13 +1,56 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>WhatsappClone</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+
+  <style>
+
+  </style>
 </head>
+
 <body>
-  <app-root></app-root>
+  <app-root>
+
+    <div id="overlay">
+      <div class="load">
+        <span class="whatsapp-icon-div">
+          <span class="light"></span>
+          <span class="whatsapp-icon"><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
+        </span>
+
+        <div class="progress-div">
+          <div class="progress" [ngStyle]="{'width': width+'%'}"></div>
+        </div>
+
+        <div class="bottom">
+          <span>Whatsapp</span>
+
+          <span class="secure-text">
+            <span class="secure-icon">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+            </span>
+            End-to-end encryption
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+  </app-root>
 </body>
+
+<script>
+  setTimeout(() => {
+
+  }, 7000);
+
+</script>
+<script src="https://kit.fontawesome.com/5799d3b1af.js" crossorigin="anonymous"></script>
+
 </html>

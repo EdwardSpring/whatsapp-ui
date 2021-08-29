@@ -1,1 +1,113 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./mixins";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.svg-btn {
+  cursor: pointer;
+  color: rgba($color: #000000, $alpha: 0.3);
+}
+::-webkit-scrollbar {
+  height: 10px;
+  width: 0px;
+}
+
+/* Scrollbar background */
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  // border-radius: 10px;
+}
+
+#overlay {
+  position: fixed;
+  //   display: none; /* Hidden by default */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $brandbg;
+  z-index: 2;
+  cursor: pointer;
+
+  .load {
+    @include move(50%, 50%);
+    // border: 1px solid red;
+    // height: 100vh;
+    width: 50%;
+    display: flex;
+    grid-gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+
+    .whatsapp-icon-div {
+      position: relative;
+      //   border: 1px solid red;
+      color: lighten($color: #000000, $amount: 80%);
+
+      .whatsapp-icon {
+        font-size: 4rem;
+      }
+
+      .light {
+        opacity: 0;
+        transition: 1s;
+        position: absolute;
+        background-color: lighten($color: #fff, $amount: 10%);
+        height: 100%;
+        width: 40%;
+        // border: 1px solid green;
+
+        @include animate(angel, 1s, ease-in-out, 3);
+
+        @include keyframe(angel) {
+          0% {
+            transform: translateX(-1%);
+            opacity: 0.1;
+          }
+          100% {
+            opacity: 0.7;
+            transform: translateX(130%);
+          }
+        }
+      }
+    }
+
+    .progress-div {
+      background-color: $brandbg2;
+      width: 50%;
+      height: 3px;
+
+      .progress {
+        background-color: $brand1;
+        width: 10%;
+        height: 100%;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-gap: 0.7rem;
+
+      color: lighten($color: #000000, $amount: 40%);
+
+      .secure-text {
+        color: lighten($color: #000000, $amount: 80%);
+        .secure-icon {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}

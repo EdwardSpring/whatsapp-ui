@@ -1,0 +1,79 @@
+$brand1: #00d9bb;
+$brandLighter: #f7f7f7;
+$brandbg: #f8f9fa;
+$brandbg2: #e6e6e6;
+$panelHeader: #ededed;
+$chatbg: #e4dcd4;
+$warn: #fed859;
+$searchContainer: #f6f6f6;
+$arrow: #00a5f4;
+$hover: #f5f5f5;
+$brand2: #06d755;
+$pressed: #d5d5d5;
+$footerbg: #f0f0f0;
+
+@mixin profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@mixin move($left, $top) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  transform: translate(-$left, -$top);
+}
+
+@mixin borderRadius($tl: 0, $tr: 0, $br: 0, $bl: 0) {
+  border-top-left-radius: $tl;
+  border-top-right-radius: $tr;
+  border-bottom-left-radius: $br;
+  border-bottom-right-radius: $bl;
+}
+
+@mixin animate($name, $duration, $ease, $count, $delay: 0s) {
+  animation: $name $duration $ease $count $delay;
+}
+
+@mixin keyframe($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@mixin mobile {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@mixin landscape {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@mixin tablet {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@mixin laptop {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@mixin desktop {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
